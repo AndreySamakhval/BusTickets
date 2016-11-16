@@ -1,0 +1,15 @@
+D:\_GIT\BusTickets\Dal\bin\Debug\Dal.dll.config
+D:\_GIT\BusTickets\Dal\bin\Debug\Dal.dll
+D:\_GIT\BusTickets\Dal\bin\Debug\Dal.pdb
+D:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.dll
+D:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.SqlServer.dll
+D:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.xml
+D:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.SqlServer.xml
+D:\_GIT\BusTickets\Dal\bin\Debug\ru\EntityFramework.resources.dll
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.dll
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.pdb
+D:\_GIT\BusTickets\Dal\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.SecondMigration.resources
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.csproj.GenerateResource.Cache
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
+D:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.editColumn.resources

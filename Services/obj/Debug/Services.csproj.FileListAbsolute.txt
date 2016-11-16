@@ -1,0 +1,16 @@
+D:\_GIT\BusTickets\Services\bin\Debug\Services.dll
+D:\_GIT\BusTickets\Services\bin\Debug\Services.pdb
+D:\_GIT\BusTickets\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+D:\_GIT\BusTickets\Services\obj\Debug\Services.dll
+D:\_GIT\BusTickets\Services\obj\Debug\Services.pdb
+D:\_GIT\BusTickets\Services\bin\Debug\Services.dll.config
+D:\_GIT\BusTickets\Services\bin\Debug\Dal.dll
+D:\_GIT\BusTickets\Services\bin\Debug\EntityFramework.dll
+D:\_GIT\BusTickets\Services\bin\Debug\EntityFramework.SqlServer.dll
+D:\_GIT\BusTickets\Services\bin\Debug\ViewModels.dll
+D:\_GIT\BusTickets\Services\bin\Debug\Dal.pdb
+D:\_GIT\BusTickets\Services\bin\Debug\ViewModels.pdb
+D:\_GIT\BusTickets\Services\bin\Debug\EntityFramework.xml
+D:\_GIT\BusTickets\Services\bin\Debug\EntityFramework.SqlServer.xml
+D:\_GIT\BusTickets\Services\bin\Debug\ru\EntityFramework.resources.dll
+D:\_GIT\BusTickets\Services\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

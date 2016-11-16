@@ -1,0 +1,4 @@
+D:\_GIT\BusTickets\ViewModels\bin\Debug\ViewModels.dll
+D:\_GIT\BusTickets\ViewModels\bin\Debug\ViewModels.pdb
+D:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.dll
+D:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.pdb
