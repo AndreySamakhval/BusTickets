@@ -1,0 +1,47 @@
+﻿body {
+
+}
+#divOrderList{
+    margin:50px;
+    margin-top:100px;
+    border:groove;
+    background-color:whitesmoke;
+    width:300px !important;
+}
+#divOrderInfo{
+    margin:10px;
+    width:280px !important;
+}
+#btnBookTicket{
+    margin:10px;
+}
+#btnOneStep{
+    margin-left:50px;
+}
+#divTickets{
+    margin-top:100px;
+ background-color:whitesmoke;
+    width:300px !important;
+    border:groove;
+    display:none;
+}
+#divAddPassenger{
+width:inherit !important;
+}
+#containerPassenger{
+     margin:20px;
+     margin-bottom:50px;
+    width:300px !important;
+    
+}
+#containerResult{
+    margin:20px;
+     background-color:whitesmoke;
+    width:300px !important;
+    border:groove;
+}
+#containerTicketInfo{    
+ background-color:whitesmoke;
+    width:300px !important;
+    border:groove;
+}

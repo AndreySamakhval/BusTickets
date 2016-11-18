@@ -2,6 +2,57 @@
 @{
     ViewBag.Title = "Index";
 }
+<link href="~/Content/HomeIndex.css" rel="stylesheet" />
+<script src="~/Scripts/HomeIndex.js"></script>
 
-<h2>Index</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div id="divSearchStop">
+                <h3>Searche the stop</h3>
+                <div id="formSearchStop">
+                    <input type="text" class="form-group" id="inputSearshStop" placeholder="Enter Name">
+                    <p class="text-danger" id="resultSearchStop"></p>
+                    <button class="btn form-group btn-sm btn-default" id="btnSearchStop">Search Stop</button>
+                    <button class="btn form-group btn-sm btn-default" id="btnShowAllhStop">Show all stop</button>
+                </div>
+                <table class="table" id="tableStop"></table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div id="divTimeTable">
+                <div id="timeTable">
+                    <h3 style="text-align:center;">The Timetable of stop</h3>
+                    <h3 class="text-center text-info" id="stopName">(Select a stop)</h3>
+                    <table class="table table-bordered" id="tableTimeTable">
+                        <tr>
+                            <th>№</th>
+                            <th>Name</th>
+                            <th>Arrival</th>
+                            <th>Departure</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="addStopTmpl" type="text/x-jquery-tmpl">
+    <tr class="containerTr table-bordered">
+        <td class="tdStopTable" stopName="${Name}" id="${Id}">${Name}</td>
+        @*<td><button class="btn btn-default btnShowStop" stopName="${Name}" id="${Id}">Show TimeTable</button></td>*@
+    </tr>
+</script>
+<script id="addTimeTableTmpl" type="text/x-jquery-tmpl">
+    <tr class="table-bordered trTimeTable">
+        <td class="table-bordered">${Number}</td>
+        <td class="table-bordered">${Name}</td>
+        <td class="table-bordered">${Arrival}</td>
+        <td class="table-bordered">${Departure}</td>
+    </tr>
+</script>
 

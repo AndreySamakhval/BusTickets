@@ -1,0 +1,9 @@
+﻿body {
+}
+#divAddStop{
+    border:solid 1px;
+    width:inherit;
+}
+#formAddStop{
+    margin:10px;
+}

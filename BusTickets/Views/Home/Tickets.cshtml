@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Tickets";
+}
+<link href="~/Content/HomeTickets.css" rel="stylesheet" />
+<script src="~/Scripts/HomeTickets.js"></script>
+
+<h3>Here you can book or buy a ticket!</h3>
+<hr />
+<div class="container">
+    <div class="row">
+        <h4>Enter the route and date:</h4>
+        <div class="col-sm-2">
+
+                <label class="form-group">Departure:</label>
+                <input type="text" class="form-group" id="inputStopDep" stopId="" placeholder="Departure stop name">
+                <table class="table table-bordered" id="selectStopDep"></table>
+        </div>
+        <div class="col-sm-2">
+            <label class="form-group">Arrival:</label>
+            <input type="text" class="form-group" id="inputStopArr" stopId="" placeholder="Arrival stop name">
+            <table class="table table-bordered" id="selectStopArr"></table>
+        </div>
+        <div class="col-sm-2">
+            <label class="form-group">Date departure:</label>
+            <input type="datetime" class="form-group" id="inputDateDep" placeholder="Date"> 
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info" id="btnSearchVoyage">Search a voyage</button>
+        </div>
+        </div>
+</div>
+<div class="container">
+    <div class="" id="divResultSearch">
+        <table class="table table-bordered table-striped" id="tableResultSearch">
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Travel time</th>
+                <th>Number of Seats</th>
+                <th>One ticket cost</th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $("#inputDateDep").datepicker({ dateFormat: 'dd/mm/yy' })
+</script>
+
+
+<script id="addStopNameTmpl" type="text/x-jquery-tmpl">
+    <tr>
+        <td class="tdStopSelect" stopName="${Name}" id="${Id}">${Name}</td>       
+    </tr>
+</script>
+<script id="addStopNameArriveTmpl" type="text/x-jquery-tmpl">
+    <tr>
+        <td class="tdStopSelectArr" stopName="${Name}" id="${Id}">${Name}</td>
+    </tr>
+</script>
+<script id="addVoyageTmpl" type="text/x-jquery-tmpl">
+    <tr class="trVoyageTable">
+        <td>${Number}</td>
+        <td>${Name}</td>
+        <td>${Departure}</td>
+        <td>${Arrival}</td>
+        <td>${TravelTime}</td>
+        <td>${NumberSeats}</td>
+        <td>${OneTicketCost}</td>
+        <td><a href="/order/index/${Id}">Buy ticket</a></td>
+    </tr>
+</script>

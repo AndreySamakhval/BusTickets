@@ -1,0 +1,70 @@
+﻿@model ViewModels.VoyageViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/OrderIndex.js"></script>
+<link href="~/Content/OrderIndex.css" rel="stylesheet" />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="container" id="divOrderList">
+                <div id="divOrderInfo">
+                    <h3 id="orderName" voyageId="@Model.Id">Order №</h3>                   
+                    <label id="labelNumber">Number voyage: @Model.Number</label>
+                    <label id="labelName">Name voyage: @Model.Name</label>
+                    <label>Departure: @Model.Departure</label>
+                    <label>Arrival: @Model.Arrival</label>
+                    <label style="margin-right:30px;">Travel time: @Model.TravelTime</label>
+                    <label>Number of seats:</label>
+                    <select name="NumberSeats" id="selectNumbers">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <label style="margin-right:80px;">One ticket cost: @Model.OneTicketCost</label>
+                    <button class="btn btn-info" id="btnOneStep">Next>></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="container" id="divTickets">
+                <h3>Passengers information</h3>
+                <div id="divAddPassenger"></div>
+                <button class="btn btn-info" id="btnBookTicket">Book a tickets</button>
+            </div>
+        </div>
+    </div>
+    <h3 class="text-success">Your ticket is successfully booked</h3>
+    <div class="container" id="containerResult">
+ 
+    </div>
+
+</div>
+
+
+<script id="addPassengerInfo" type="text/x-jquery-tmpl">
+    <div class="containerPassenger">
+            <input type="text" id="inputFirstName" placeholder="First Name" style="margin:10px;"/>
+            <input type="text" id="inputLastName"  placeholder="Last Name" style="margin:10px;"/>
+            <input type="text" id="inputDocumentNumber"  placeholder="Document Number" style="margin:10px;"/>
+    </div>
+</script>
+<script id="addTicketInfoTmpl" type="text/x-jquery-tmpl">
+    @*<div class="containerTicketInfo">*@
+        <div class="divTicketInfo">
+            <h3>Ticket</h3>
+            <label>Number Order: ${OrderId}</label>
+            <label>Number Voyage: ${VoyageNumeber}</label>
+            <label>Voyage Name: ${VoyageName}</label>
+            <label>Departure: ${Departure}</label>
+            <label>Passenger's Name: ${PassengerName}</label>
+            <label>Document number: ${DocumentNumber}</label>
+            <label>Number Voyage: ${NumberSeet}</label>
+            <label class="text-info">Status: ${Status}</label>
+            <button class="btn btnBuyNow" TicketId="${Id}">Buy now</button>
+        </div>
+    @*</div>*@
+</script>

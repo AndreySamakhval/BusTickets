@@ -1,0 +1,32 @@
+﻿body {
+}
+#formSearchStop{
+    margin:20px;
+}
+#tableStop{
+    margin:20px;
+    width:inherit;
+}
+.tdStopTable{
+    width:100px !important;
+    text-align:center;
+    background-color:white;
+}
+.btnShowStop{
+    width:inherit !important;
+}
+#divSearchStop{
+    margin-top:50px;
+    background-color:whitesmoke;
+}
+#resultSearchStop{
+    
+}
+#divTimeTable{
+    margin:50px;
+    background-color:whitesmoke;
+ /*//   display:none;*/
+}
+#timeTable{
+    margin:20px;
+}

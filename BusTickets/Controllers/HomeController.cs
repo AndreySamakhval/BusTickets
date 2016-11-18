@@ -16,6 +16,14 @@ namespace BusTickets.Controllers
             return View();
         }
 
+        public ActionResult Tickets()
+        {
+            return View();
+        }
+
+
+
+
         public void Init()
         {
             _service.InitDB();
