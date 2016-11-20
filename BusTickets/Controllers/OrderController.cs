@@ -10,7 +10,12 @@ namespace BusTickets.Controllers
 {
     public class OrderController : Controller
     {
-        Service _service = new Service();
+        IService _service;
+        public OrderController(IService Service)
+        {
+            _service = Service;
+        }
+
         // GET: Order
         public ActionResult Index(int id)
         {
@@ -18,12 +23,6 @@ namespace BusTickets.Controllers
 
             return View(voyage);
         }
-        //[HttpPost]
-        //public ActionResult Ticket(int id)
-        //{
-        //    VoyageViewModel voyage = _service.GetVoyage(id);
 
-        //    return View(voyage);
-        //}
     }
 }

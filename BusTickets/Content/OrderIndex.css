@@ -35,13 +35,18 @@ width:inherit !important;
     
 }
 #containerResult{
+    /*margin:20px;*/
+     /*background-color:whitesmoke;
+    width:300px !important;
+    border:groove;*/
+    display:none;
+}
+#containerTicketInfo{    
     margin:20px;
      background-color:whitesmoke;
     width:300px !important;
     border:groove;
 }
-#containerTicketInfo{    
- background-color:whitesmoke;
-    width:300px !important;
-    border:groove;
+#divTicketInfo{
+    margin:20px;
 }

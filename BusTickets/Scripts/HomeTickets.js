@@ -62,8 +62,9 @@ voyage = {
         var date = $('#inputDateDep').val();
         
         $.ajax({
-            type: 'GET',
-            url: '/api/voyage?DepId='+idDep+'&ArrId='+idArr+'&Date='+date,
+            type: 'POST',
+            url: '/home/searchvoyage',
+            data:({DepartureId:idDep, ArriveId:idArr, Date:date}),
             asynch: true,
             success: function (output, status, xhr) {
                voyage.render(output)

@@ -39,7 +39,7 @@ ticket = {
             data: ({ PassengerName: name, OrderId: main.idOrder, DocumentNumber: numb, NumberSeet:3,status:'reserved' }),
             asynch: true,            
             success: function (output) {
-               // ticket.UpdateStatus(main.idOrder);
+               // 
                 ticket.GetTicketInfo(output);
             }
         });
@@ -65,6 +65,8 @@ ticket = {
         });
     },
     renderTicketInfo: function (output) {
-        $('#addTicketInfoTmpl').tmpl(output).appendTo('#containerResult');
+        $('#containerResult').show();
+        $('#addTicketInfoTmpl').tmpl(output).appendTo('#containerTicketInfo');
+        ticket.UpdateStatus(main.idOrder);
     }
 }

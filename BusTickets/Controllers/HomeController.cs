@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ViewModels;
 
 namespace BusTickets.Controllers
 {
     public class HomeController : Controller
     {
-        Service _service = new Service();
+        IService _service;
+        public HomeController(IService Service)
+        {
+            _service = Service;
+        }
+
         // GET: Home
         public ActionResult Index()
         {
@@ -19,6 +25,13 @@ namespace BusTickets.Controllers
         public ActionResult Tickets()
         {
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult SearchVoyage(SearchVoyageViewModel voyage)
+        {
+
+            return Json(_service.SearchVoyages(voyage));
         }
 
 

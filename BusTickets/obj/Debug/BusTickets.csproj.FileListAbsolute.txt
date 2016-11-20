@@ -120,3 +120,14 @@ G:\_GIT\BusTickets\BusTickets\bin\ru\System.Web.Http.WebHost.resources.dll
 G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.csprojResolveAssemblyReference.cache
 G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.dll
 G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.pdb
+D:\_GIT\BusTickets\BusTickets\bin\Dependancy.dll
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.dll
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.ServiceLocation.dll
+D:\_GIT\BusTickets\BusTickets\bin\Dependancy.pdb
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.xml
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.ServiceLocation.xml
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\_GIT\BusTickets\BusTickets\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml

@@ -8,7 +8,25 @@ using ViewModels;
 
 namespace Services
 {
-    public class Service
+    public interface IService
+    {
+        void AddStop(StopViewModel stop);
+        List<StopViewModel> GetStops();
+        List<StopViewModel> GetStops(string name);
+        List<StopInfoViewModel> GetStopInfo(int id);
+        List<VoyageViewModel> SearchVoyages(SearchVoyageViewModel searchVoyage);
+        VoyageViewModel GetVoyage(int id);
+        int NewOrder(int voyageId);
+        int NewTicket(TicketViewModel ticket);
+        TicketInfoViewModel TicketInfo(int id);
+        void UpdateOrder(int id, string status);
+        void InitDB();
+    }
+
+
+
+
+    public class Service: IService
     {
         public void AddStop(StopViewModel stop)
         {           
@@ -64,8 +82,7 @@ namespace Services
                     {
                         Name = x.VoyageName,
                         Number = x.VoyageNumber,
-                        Arrival = x.ArrivalDateTime.ToString()
-                        //Departure = x.DepartureDateTime.ToString()
+                        Arrival = x.ArrivalDateTime.ToString()                        
                     }).ToList();
 
                 var stopDeparture = DB.Voyages.Where(x => x.DepartureStopId == id)
@@ -86,8 +103,8 @@ namespace Services
         public List<VoyageViewModel> SearchVoyages(SearchVoyageViewModel searchVoyage)
         {
             var result = new List<VoyageViewModel>();
-            var d = searchVoyage.Date;
-            var d1 = searchVoyage.Date.AddDays(1);
+            var d = DateTime.Parse(searchVoyage.Date);
+            var d1 = d.AddDays(1);
             using (var DB = new BusTicketsContext())
             {
                  result = DB.Voyages.Where(x => x.DepartureStopId == searchVoyage.DepartureId
@@ -98,9 +115,9 @@ namespace Services
                     Id = x.Id,
                     Name = x.VoyageName,
                     Number = x.VoyageNumber,
-                    TravelTime = x.TravelTime,
-                    Departure = x.DepartureDateTime,
-                    Arrival = x.ArrivalDateTime,
+                    TravelTime = x.TravelTime.ToString(),
+                    Departure = x.DepartureDateTime.ToString(),
+                    Arrival = x.ArrivalDateTime.ToString(),
                     NumberSeats = x.NumberOfSeets,
                     OneTicketCost = x.TicketCost
                 }).ToList();
@@ -120,9 +137,9 @@ namespace Services
                     Id = result.Id,
                     Name = result.VoyageName,
                     Number = result.VoyageNumber,
-                    TravelTime = result.TravelTime,
-                    Departure = result.DepartureDateTime,
-                    Arrival = result.ArrivalDateTime,
+                    TravelTime = result.TravelTime.ToString(),
+                    Departure = result.DepartureDateTime.ToString(),
+                    Arrival = result.ArrivalDateTime.ToString(),
                     NumberSeats = result.NumberOfSeets,
                     OneTicketCost = result.TicketCost
                 };

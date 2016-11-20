@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using Dependancy;
+using Microsoft.Practices.Unity;
 
 namespace BusTickets
 {
@@ -14,10 +16,16 @@ namespace BusTickets
     {
         void Application_Start(object sender, EventArgs e)
         {
-            // Код, выполняемый при запуске приложения
+            IUnityContainer container = new UnityContainer();
+            
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+           // GlobalConfiguration.Configuration.DependencyResolver = new BTDependancyResolver(container);
+           
+            DependencyResolver.SetResolver(
+                new BTDependancyResolver(container));           
+
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

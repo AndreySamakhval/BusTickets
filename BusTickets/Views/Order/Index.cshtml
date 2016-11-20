@@ -37,11 +37,13 @@
             </div>
         </div>
     </div>
-    <h3 class="text-success">Your ticket is successfully booked</h3>
+    
     <div class="container" id="containerResult">
- 
+        <h3 class="text-success">Your ticket is successfully booked!</h3>
+        <div id="containerTicketInfo">
+        </div>
+        <button class="btn btn-success btnBuyNow" style="margin-left:30px;">Buy now!</button>
     </div>
-
 </div>
 
 
@@ -52,19 +54,16 @@
             <input type="text" id="inputDocumentNumber"  placeholder="Document Number" style="margin:10px;"/>
     </div>
 </script>
-<script id="addTicketInfoTmpl" type="text/x-jquery-tmpl">
-    @*<div class="containerTicketInfo">*@
-        <div class="divTicketInfo">
-            <h3>Ticket</h3>
-            <label>Number Order: ${OrderId}</label>
-            <label>Number Voyage: ${VoyageNumeber}</label>
-            <label>Voyage Name: ${VoyageName}</label>
+<script id="addTicketInfoTmpl" type="text/x-jquery-tmpl">   
+        <div id="divTicketInfo" >
+            <h3>Ticket №${Id}</h3>
+            <label style="margin-right:50px;">Number Order: ${OrderId}</label>
+            <label style="margin-right:50px;">Number Voyage: ${VoyageNumeber}</label>
+            <label style="margin-right:50px;">Voyage Name: ${VoyageName}</label>
             <label>Departure: ${Departure}</label>
-            <label>Passenger's Name: ${PassengerName}</label>
-            <label>Document number: ${DocumentNumber}</label>
-            <label>Number Voyage: ${NumberSeet}</label>
-            <label class="text-info">Status: ${Status}</label>
-            <button class="btn btnBuyNow" TicketId="${Id}">Buy now</button>
-        </div>
-    @*</div>*@
+            <label style="margin-right:50px;">Passenger's Name: ${PassengerName}</label>
+            <label style="margin-right:50px;">Document number: ${DocumentNumber}</label>
+            <label style="margin-right:50px;">Number Voyage: ${NumberSeet}</label>
+            <label style="margin-right:50px;" class="text-info">Status: ${Status}</label>            
+        </div>    
 </script>
