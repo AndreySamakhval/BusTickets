@@ -27,3 +27,6 @@ G:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.editColumn.resources
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.csproj.GenerateResource.Cache
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.dll
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.pdb
+G:\_GIT\BusTickets\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
+G:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.add_column_userId.resources
+G:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.edit_column.resources

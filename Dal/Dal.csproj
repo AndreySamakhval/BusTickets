@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201611151257519_editColumn.Designer.cs">
       <DependentUpon>201611151257519_editColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611202042473_add_column_userId.cs" />
+    <Compile Include="Migrations\201611202042473_add_column_userId.Designer.cs">
+      <DependentUpon>201611202042473_add_column_userId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611202130211_edit_column.cs" />
+    <Compile Include="Migrations\201611202130211_edit_column.Designer.cs">
+      <DependentUpon>201611202130211_edit_column.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611151257519_editColumn.resx">
       <DependentUpon>201611151257519_editColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611202042473_add_column_userId.resx">
+      <DependentUpon>201611202042473_add_column_userId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611202130211_edit_column.resx">
+      <DependentUpon>201611202130211_edit_column.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

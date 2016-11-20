@@ -7,3 +7,4 @@ G:\_GIT\BusTickets\ViewModels\bin\Debug\ViewModels.pdb
 G:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.dll
 G:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.pdb
 D:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+G:\_GIT\BusTickets\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache

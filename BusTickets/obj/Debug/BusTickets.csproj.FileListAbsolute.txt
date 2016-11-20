@@ -161,3 +161,6 @@ G:\_GIT\BusTickets\BusTickets\bin\Microsoft.Owin.Security.xml
 G:\_GIT\BusTickets\BusTickets\bin\Microsoft.Owin.Security.Cookies.xml
 G:\_GIT\BusTickets\BusTickets\bin\Microsoft.Owin.Security.Google.xml
 G:\_GIT\BusTickets\BusTickets\bin\Microsoft.Owin.Security.OAuth.xml
+G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.Migrations.InitialCreate.resources
+G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.csproj.GenerateResource.Cache
+G:\_GIT\BusTickets\BusTickets\obj\Debug\BusTickets.Migrations.firstmigr.resources

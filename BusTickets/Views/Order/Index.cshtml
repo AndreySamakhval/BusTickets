@@ -1,4 +1,5 @@
-﻿@model ViewModels.VoyageViewModel
+﻿@using Microsoft.AspNet.Identity
+@model ViewModels.VoyageViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +14,7 @@
         <div class="col-sm-4">
             <div class="container" id="divOrderList">
                 <div id="divOrderInfo">
-                    <h3 id="orderName" voyageId="@Model.Id">Order №</h3>                   
+                    <h3 id="orderName" voyageId="@Model.Id" userId="@User.Identity.GetUserId()" orderId="">Order №</h3>                 
                     <label id="labelNumber">Number voyage: @Model.Number</label>
                     <label id="labelName">Name voyage: @Model.Name</label>
                     <label>Departure: @Model.Departure</label>
@@ -42,7 +43,8 @@
         <h3 class="text-success">Your ticket is successfully booked!</h3>
         <div id="containerTicketInfo">
         </div>
-        <button class="btn btn-success btnBuyNow" style="margin-left:30px;">Buy now!</button>
+        <a href="" class="btn-link" id="aBuyNow">BuyNow</a>
+      
     </div>
 </div>
 

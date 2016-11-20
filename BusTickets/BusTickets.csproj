@@ -188,6 +188,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201611201911329_InitialCreate.cs" />
+    <Compile Include="Migrations\201611201911329_InitialCreate.Designer.cs">
+      <DependentUpon>201611201911329_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611202111237_first-migr.cs" />
+    <Compile Include="Migrations\201611202111237_first-migr.Designer.cs">
+      <DependentUpon>201611202111237_first-migr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Startup.cs" />
     <Content Include="App_Data\BusTicketsDB.mdf" />
     <Content Include="App_Data\BusTicketsDB_log.ldf">
@@ -282,7 +291,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\Api\OrderController.cs" />
+    <Compile Include="Controllers\Api\OrdersController.cs" />
     <Compile Include="Controllers\Api\StopController.cs" />
     <Compile Include="Controllers\Api\StopInfoController.cs" />
     <Compile Include="Controllers\Api\TicketController.cs" />
@@ -316,6 +325,8 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Order\Buy.cshtml" />
+    <Content Include="Views\Order\Show.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -323,7 +334,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611201911329_InitialCreate.resx">
+      <DependentUpon>201611201911329_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611202111237_first-migr.resx">
+      <DependentUpon>201611202111237_first-migr.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dependancy\Dependancy.csproj">
       <Project>{99cf3d97-2f8a-4725-a967-999c12b20329}</Project>
@@ -337,9 +355,6 @@
       <Project>{63f8fad9-6254-4704-918f-0afc540e2584}</Project>
       <Name>ViewModels</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

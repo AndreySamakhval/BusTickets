@@ -8,6 +8,7 @@ using ViewModels;
 
 namespace BusTickets.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         IService _service;
@@ -22,6 +23,18 @@ namespace BusTickets.Controllers
            VoyageViewModel voyage =_service.GetVoyage(id);
 
             return View(voyage);
+        }
+
+        public ActionResult Buy(int id)
+        {
+            _service.Buy(id);
+            return View();
+        }
+
+        public ActionResult Show()
+        {
+            var name = User.Identity.Name;
+            return View(_service.GetOrder(name));
         }
 
     }

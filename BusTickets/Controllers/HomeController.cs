@@ -9,6 +9,7 @@ using ViewModels;
 namespace BusTickets.Controllers
 {
     [RequireHttps]
+    [Authorize]
     public class HomeController : Controller
     {
         IService _service;
@@ -34,9 +35,6 @@ namespace BusTickets.Controllers
 
             return Json(_service.SearchVoyages(voyage));
         }
-
-
-
 
         public void Init()
         {

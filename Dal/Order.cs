@@ -18,6 +18,8 @@ namespace Dal
         public int VoyageId { get; set; }
         public Voyage Voyage { get; set; }
 
+        public string UserName { get; set; }
+
         [Required]
         public string Status { get; set; }
 

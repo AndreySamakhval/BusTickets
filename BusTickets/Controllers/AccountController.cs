@@ -61,16 +61,14 @@ namespace BusTickets.Controllers
             }
         }
 
-        //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View();            
         }
-
-        //
+        
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -81,13 +79,10 @@ namespace BusTickets.Controllers
             {
                 return View(model);
             }
-
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             if (result== SignInStatus.Success)
-            {
-                
+            {               
                     return RedirectToLocal(returnUrl);
-
             }
             else { 
                     ModelState.AddModelError("", "The login attempt failed.");
@@ -100,8 +95,7 @@ namespace BusTickets.Controllers
         {
             return View();
         }
-
-        //
+        
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -114,6 +108,7 @@ namespace BusTickets.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, "User");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     return RedirectToAction("Index", "Home");
@@ -122,20 +117,17 @@ namespace BusTickets.Controllers
             }           
             return View(model);
         }
-        [AllowAnonymous]
-        public void InitUser()
-        {
-            //var user = new ApplicationUser { UserName = "Admin@admin.com", Email = "Admin@admin.com",  };
-            //    var result = UserManager.CreateAsync(user, "159753");
-            var role = new ApplicationRole { Name = "User" };
-            RoleManager.CreateAsync(role);
-            //UserManager.AddToRoleAsync(user.Id, role.Name);
-        }
+        //[AllowAnonymous]
+        //public void InitUser()
+        //{
+        //    //var user = new ApplicationUser { UserName = "Admin@admin.com", Email = "Admin@admin.com",  };
+        //    //    var result = UserManager.CreateAsync(user, "159753");
+        //    var role = new ApplicationRole { Name = "User" };
+        //    RoleManager.CreateAsync(role);
+        //    //UserManager.AddToRoleAsync(user.Id, role.Name);
+        //}
 
-
-
-
-        //
+        
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
@@ -203,7 +195,7 @@ namespace BusTickets.Controllers
                 return RedirectToAction("Login");
             }
 
-            // Выполнение входа пользователя посредством данного внешнего поставщика входа, если у пользователя уже есть имя входа
+          
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
             {
@@ -229,7 +221,7 @@ namespace BusTickets.Controllers
             }
             if (ModelState.IsValid)
             {
-                // Получение сведений о пользователе от внешнего поставщика входа
+               
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
@@ -253,7 +245,6 @@ namespace BusTickets.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -292,7 +283,7 @@ namespace BusTickets.Controllers
         }
 
         #region Вспомогательные приложения
-        // Используется для защиты от XSRF-атак при добавлении внешних имен входа
+       
         private const string XsrfKey = "XsrfId";
 
         private IAuthenticationManager AuthenticationManager

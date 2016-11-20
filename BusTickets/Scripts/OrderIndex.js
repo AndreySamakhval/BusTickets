@@ -14,15 +14,18 @@ main = {
         })
     },
     newOrder: function () {
-        var id = $('#orderName').attr('voyageId');
+        var id = $('#orderName').attr('voyageId'); 
+        var userId = $('#orderName').attr('userId');
         $.ajax({
             type: 'GET',
-            url: '/api/order/'+id,
-            asynch: true,
-           // data:({voyageId:id}),
-            success: function (output) {
+            url: '/api/orders/' + id,
+           // data: ({ voyageId: id, userId: userId }),
+            asynch: true,            
+            success: function (output, status, xhr) {
                 $('#orderName').append(output);
                 main.idOrder = output;
+                $('#aBuyNow').attr('href', '/order/buy/' + output);
+                
             }
         });
     },
@@ -57,7 +60,7 @@ ticket = {
     UpdateStatus: function (id) {
         $.ajax({
             type: 'PUT',
-            url: '/api/order/' + id,
+            url: '/api/orders/' + id,
             data: ({ status:"reserved" }),
             asynch: true,
             success: function () { 
@@ -68,5 +71,9 @@ ticket = {
         $('#containerResult').show();
         $('#addTicketInfoTmpl').tmpl(output).appendTo('#containerTicketInfo');
         ticket.UpdateStatus(main.idOrder);
+        $('.btnBuyNow').click(function () {            
+            $.get('/order/buy/' + main.idOrder);
+        })
+       
     }
 }

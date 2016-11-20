@@ -16,10 +16,12 @@ namespace Services
         List<StopInfoViewModel> GetStopInfo(int id);
         List<VoyageViewModel> SearchVoyages(SearchVoyageViewModel searchVoyage);
         VoyageViewModel GetVoyage(int id);
-        int NewOrder(int voyageId);
+        int NewOrder(int voyageId, string userName);
         int NewTicket(TicketViewModel ticket);
         TicketInfoViewModel TicketInfo(int id);
         void UpdateOrder(int id, string status);
+        void Buy(int id);
+        List<OrderViewModel> GetOrder(string userName);
         void InitDB();
     }
 
@@ -148,13 +150,13 @@ namespace Services
                 return voyage;
         }
 
-        public int NewOrder(int voyageId)
+        public int NewOrder(int voyageId, string userName)
         {
             int id;
 
             using (var DB = new BusTicketsContext())
             {
-                Order order = new Order { VoyageId = voyageId, Status = "open" };
+                Order order = new Order { VoyageId = voyageId, Status = "open", UserName=userName };
                 var newOrder = DB.Orders.Add(order);
                 DB.SaveChanges();
                 id = newOrder.Id;
@@ -189,6 +191,7 @@ namespace Services
             {
                 ticketInfo = DB.Tickets.Where(x => x.Id == id).Select(x => new TicketInfoViewModel
                 {
+                    Id=x.Id,
                     OrderId = x.OrderId,
                     DocumentNumber = x.PassengerDocumentNumber,
                     PassengerName = x.PassengerName,
@@ -212,12 +215,38 @@ namespace Services
                 var order = DB.Orders.Find(id);
                 order.Status = status;
                 DB.SaveChanges();
+
             }
         }
 
+        public void Buy(int id)
+        {
+            using (var DB = new BusTicketsContext())
+            {
+                var order = DB.Orders.Find(id);
+                order.Status = "bought Out";
+                var ticket = DB.Tickets.First(x => x.OrderId == id);
+                ticket.Status= "bought Out";
+                DB.SaveChanges();
+            }
+        }
 
+        public List<OrderViewModel> GetOrder(string userName)
+        {
+            var orders =new List<OrderViewModel>();
 
-
+            using (var DB = new BusTicketsContext())
+            {
+                orders = DB.Orders.Where(x => x.UserName == userName).Select(x => new OrderViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Voyage.VoyageName,
+                    Departure = x.Voyage.DepartureDateTime.ToString(),
+                    Status = x.Status
+                }).ToList();
+            }
+            return orders;
+        }
 
         public void InitDB()
         {
