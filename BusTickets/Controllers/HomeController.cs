@@ -8,6 +8,7 @@ using ViewModels;
 
 namespace BusTickets.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         IService _service;

@@ -22,7 +22,6 @@ G:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.xml
 G:\_GIT\BusTickets\Dal\bin\Debug\EntityFramework.SqlServer.xml
 G:\_GIT\BusTickets\Dal\bin\Debug\ru\EntityFramework.resources.dll
 G:\_GIT\BusTickets\Dal\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-G:\_GIT\BusTickets\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.SecondMigration.resources
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.Migrations.editColumn.resources
 G:\_GIT\BusTickets\Dal\obj\Debug\Dal.csproj.GenerateResource.Cache
